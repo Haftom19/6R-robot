@@ -29,7 +29,7 @@ H0_6 = H0_5*H5_6;
 % z_p= input('insert z position');
 y_p = y_p - (d(6)*H0_6(1,3));
 x_p = x_p - (d(6)*H0_6(2,3));
-z_p = z_p - (d(6)*H0_6(3,3));
+z_p =  z_p - (d(6)*H0_6(3,3));
 
 %inverse Kinamatics for the position:
    r    = real(sqrt(x_p^2+y_p^2));
@@ -67,7 +67,7 @@ theta_4 = (theta_4);
 %}
 if abs(R_H(3,3)) == 1
     fprintf("R(3,3) == 1") 
-    q5 = atan2d(sqrt(1-(R_H(3,3))^2),R_H(3,3));
+    q5 = (asin(R_H(3,3)));
     theta_5 = (180/pi)*q5;
 
     if q5 >= 0
@@ -86,7 +86,7 @@ if abs(R_H(3,3)) == 1
 else
     fprintf("R(3,3) =/= 1")
     %q5 = atan2(sqrt(1 - invT03_T06(3,3)^2), invT03_T06(3,3));
-    q5 = atan2d(sqrt(1-(R_H(3,3))^2),R_H(3,3));
+    q5 = (asin(R_H(3,3)));
     theta_5 = rad2deg(q5);
     
     q4 = (atan2(R_H(2,3),R_H(1,3))) ;
